@@ -52,6 +52,7 @@ endif
 
 define DEJAVU_INSTALL_TARGET_CMDS
 	mkdir -p $(TARGET_DIR)/usr/share/fonts/dejavu/
+	ln -s . $(TARGET_DIR)/usr/share/fonts/truetype 
 	for i in $(DEJAVU_FONTS_INSTALL) ; do \
 		$(INSTALL) -m 0644 $(@D)/ttf/$$i \
 			$(TARGET_DIR)/usr/share/fonts/dejavu/ || exit 1 ; \

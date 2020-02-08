@@ -1,0 +1,30 @@
+2020.02, Released Feb 8th, 2020
+
+	The very first public homebrew buildroot release for gkd350h 
+
+	
+	Notes
+	0.
+	This buildroot is for building rootfs for gkd350g CFW only so far.
+
+	1.
+	gmenu2x is updated, but this version is *not* fully support for those 
+	particular features of gkd350h. such as CPU performance, LCD backlight 
+	level and sound vol settings inside the settings menu. Requiring some 
+	work here.
+
+	2.
+	gmenunx(esoteric version) and retroarch are included and fully ready 
+	to be compiled in the full packages. (but, these two packages won't 
+	be install into the rootfs as those setting files are not yet been 
+	made and copied to the right place. Some work is necessary for post-build 
+	stuff, and retroarch 1.84 has issues for resolution changing for 
+	gkd350h. need some tweaks for this).
+
+	3.
+	GCC 5.4 is the default toolchain compiler now. (would be generated during 
+	the building of buildroot) You still can switch back to 4.9.1 if you 
+	still need it.
+
+	4. 
+	probably still something i forgot to mention. :)

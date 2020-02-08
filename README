@@ -1,3 +1,28 @@
+GKD350H buildroot buiilding instructions:
+=========================================
+
+1) before starting to make buildroot for GKD350H
+make sure your GCC compiler is version 5.4.
+What I would suggest is to install a fresh Ubuntu 16.04 LTS, as it came with GCC 5.4 as default.
+
+2) install packages you would need for building what we need.
+$ sudo apt-get update
+$ sudo apt-get install bison flex gettext texinfo wget cpio python unzip mercurial subversion libncurses5-dev libc6-dev-i386 bzr squashfs-tools
+$ sudo apt-get install gcj-4.9-jdk
+
+3) ready to start build everything
+$ git clone https://github.com/martinx72/buildroot_gkd350h.git
+$ cd buildroot_gkd350h
+$ make gkd350h_defconfig
+$ make
+
+
+Have fun!
+
+
+======================================================
+
+
 To build and use the buildroot stuff, do the following:
 
 1) run 'make menuconfig'

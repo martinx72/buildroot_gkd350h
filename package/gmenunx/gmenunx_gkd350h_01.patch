@@ -1,0 +1,46 @@
+diff --git a/Makefile.rg-350 b/Makefile.rg-350
+index a2bd3e7..6eec583 100644
+--- a/Makefile.rg-350
++++ b/Makefile.rg-350
+@@ -1,5 +1,5 @@
+-TARGET=RG350
+-PATH_DIR=rg-350
++TARGET=gkd350h
++PATH_DIR=gkd350h
+ 
+ CC = $(CROSS_COMPILE)gcc
+ CXX = $(CROSS_COMPILE)g++
+@@ -15,6 +15,7 @@ DEBUG ?= 2
+ CFLAGS = \
+ 	-ggdb \
+     -std=gnu++11 \
++	-D_GLIBCXX_USE_CXX11_ABI=0 \
+ 	-shared-libgcc \
+ 	-DTARGET_$(TARGET) \
+     -DLOG_LEVEL=$(DEBUG) \
+@@ -74,9 +75,9 @@ dist: all
+ 	cp -RH assets/$(PATH_DIR)/scripts $(DISTDIR)
+ 	cp -RH assets/$(PATH_DIR)/sections $(DISTDIR)
+ 	cp -RH assets/input $(DISTDIR)
+-	cp assets/$(PATH_DIR)/icons/rg350.png $(DISTDIR)/logo.png
+-	cp assets/$(PATH_DIR)/icons/rg350.png $(DISTDIR)/skins/Default/icons/device.png
+-	cp assets/$(PATH_DIR)/icons/rg350.png $(DISTDIR)/skins/Minimal/icons/device.png
++	cp assets/$(PATH_DIR)/icons/$(PATH_DIR).png $(DISTDIR)/logo.png
++	cp assets/$(PATH_DIR)/icons/$(PATH_DIR).png $(DISTDIR)/skins/Default/icons/device.png
++	cp assets/$(PATH_DIR)/icons/$(PATH_DIR).png $(DISTDIR)/skins/Minimal/icons/device.png
+ 
+ opk: dist
+ 	./make_opk.sh
+diff --git a/make_opk.sh b/make_opk.sh
+index 1eeb3a0..295777f 100755
+--- a/make_opk.sh
++++ b/make_opk.sh
+@@ -2,7 +2,7 @@
+ 
+ APP_NAME="esoteric";
+ OPK_EXTENSION=".opk";
+-ASSETS_PATH="dist/RG350/esoteric";
++ASSETS_PATH="dist/gkd350h/esoteric";
+ argCount=$#
+ OPK_NAME="${APP_NAME}${OPK_EXTENSION}"
+ SUPPORTED_PLATFORMS=("gcw0" "retrofw")

@@ -1,0 +1,23 @@
+From 1ed8f75a0539827732f639e5d52148f30fc032a0 Mon Sep 17 00:00:00 2001
+From: Volker Gropp <volker@gropp.org>
+Date: Sat, 25 Jul 2015 13:32:00 +0200
+Subject: [PATCH] fix g++5 warnings and errors
+
+ src/input/retrieve.c | 2 +-
+ src/input/retrieve.h | 2 +-
+ src/output.c         | 4 ++--
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+diff bwm-ng-0.6/src/input/retrieve.c bwm-ng-0.6/src/input/retrieve.c
+index e86e2c3..eb72d3e 100644
+--- bwm-ng-0.6/src/input/retrieve.c
++++ bwm-ng-0.6/src/input/retrieve.c
+@@ -47,7 +47,7 @@ char check_if_up(char *ifname) {
+ #endif
+ 
+ /* chooses the correct get_iface_stats() to use */
+-inline void get_iface_stats(char _n) {
++void get_iface_stats(char _n) {
+    switch (input_method) {
+ #ifdef NETSTAT
+        case NETSTAT_IN:

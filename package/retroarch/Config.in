@@ -1,0 +1,14 @@
+config BR2_PACKAGE_RETROARCH
+	bool "retroarch"
+	depends on BR2_PACKAGE_LIBPNG
+	depends on BR2_PACKAGE_ZLIB
+	depends on BR2_PACKAGE_SDL
+	depends on BR2_PACKAGE_SDL_TTF
+	depends on BR2_PACKAGE_SDL_GFX
+	depends on BR2_PACKAGE_PYTHON
+	help
+	  RetroArch is a frontend for emulators, game engines and media players.
+	  Cross-platform, sophisticated frontend for the libretro API.
+
+	  http://www.libretro.com
+

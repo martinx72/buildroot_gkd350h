@@ -1,4 +1,0 @@
-config BR2_PACKAGE_LOWPOWD
-	bool "lowpowd"
-	help
-	  Low Power Warning Daemon.
